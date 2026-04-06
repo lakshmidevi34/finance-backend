@@ -1,0 +1,55 @@
+Finance Data Processing Backend
+
+Overview This project is a backend application designed to manage
+financial records efficiently with proper role-based access control. It
+allows users to track transactions, view analytics, and manage data
+securely through REST APIs.
+
+Tech Stack - Node.js - Express.js - MongoDB (Mongoose) - JWT (JSON Web
+Tokens)
+
+Project Structure src/ controllers/ models/ routes/ middleware/
+services/ utils/ app.js
+
+Authentication The application uses JWT-based authentication. Once a
+user logs in, a token is generated which must be included in requests to
+access protected routes.
+
+Roles & Permissions Viewer - Can only view records Analyst - Can view
+records and dashboard insights Admin - Full control (create, update,
+delete records)
+
+Features
+
+User Management - User registration and login - Role-based access
+control - Manage active/inactive users
+
+Financial Records - Add, update, delete transactions - Filter by type,
+category, and date - Pagination support
+
+Dashboard APIs - Total income and expenses - Net balance - Category-wise
+analysis - Monthly trends - Recent transactions
+
+API Endpoints
+
+Auth POST /api/auth/register POST /api/auth/login
+
+Records POST /api/records GET /api/records PATCH /api/records/:id DELETE
+/api/records/:id
+
+Dashboard GET /api/dashboard/summary GET /api/dashboard/categories GET
+/api/dashboard/trends GET /api/dashboard/recent
+
+Setup Instructions 1. Clone repository 2. Run: npm install 3. Create
+.env file and add: PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/financeDB JWT_SECRET=your_secret 4.
+Run: npm run dev
+
+Assumptions - Roles are predefined (viewer, analyst, admin) - Only admin
+can modify records - Basic validation implemented
+
+Additional Features - JWT authentication - Filtering and pagination -
+Aggregation APIs
+
+Future Improvements - Add unit tests - Add refresh tokens - Improve
+validation - Add frontend dashboard
