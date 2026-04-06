@@ -1,0 +1,42 @@
+### User registration 1
+GET http://localhost:5000/api/users
+
+### auth registration
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Lakshmi",
+  "email": "devi@gmail.com",
+  "password": "123456",
+  "role": "admin"
+}
+
+### auth login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "devi@gmail.com",
+  "password": "123456"
+}
+
+### create record
+POST http://localhost:5000/api/records
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDNhZTZlYzUxNGY2ZmU2MmEwNjRlZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTQ4MDQzMywiZXhwIjoxNzc1NTY2ODMzfQ.FjeHP9GnZPnvds7EfcYuZhdmBACDRp2TLUzJA5b_wNY
+
+{
+  "amount": 5000,
+  "type": "income",
+  "category": "salary",
+  "notes": "monthly salary"
+}
+
+### get records
+GET http://localhost:5000/api/records
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDNhZTZlYzUxNGY2ZmU2MmEwNjRlZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTQ4MDQzMywiZXhwIjoxNzc1NTY2ODMzfQ.FjeHP9GnZPnvds7EfcYuZhdmBACDRp2TLUzJA5b_wNY
+
+### get dashboard summary
+GET http://localhost:5000/api/dashboard/summary
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDNhZTZlYzUxNGY2ZmU2MmEwNjRlZCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTQ4MDQzMywiZXhwIjoxNzc1NTY2ODMzfQ.FjeHP9GnZPnvds7EfcYuZhdmBACDRp2TLUzJA5b_wNY
